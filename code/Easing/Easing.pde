@@ -6,7 +6,7 @@ float easing = 0.05;
 
 void setup() 
 {
-  size(500, 500); 
+  size(displayWidth , displayHeight); 
   smooth();
   noStroke();  
 }

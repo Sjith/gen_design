@@ -19,7 +19,10 @@ void draw()
 {
  
 }
-
+void onPause()
+{
+  super.onPause();
+}
 void exit()
 {
   String[] s = new String[dataStore.size()];

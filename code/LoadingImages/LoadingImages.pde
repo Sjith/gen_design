@@ -2,7 +2,7 @@ PImage image;
 int fillAmount;
 
 void setup() {
-  size(600, 600);
+  size(displayWidth, displayHeight);
   image = loadImage("http://ciid.dk/root_ciidwww/wp-content/uploads/2011/12/girls.jpg");
 }
 
@@ -19,12 +19,17 @@ void draw() {
   background(0);
   if (image != null) { // make sure it's there!
     
-    tint(255, fillAmount);  // Display at half opacity
+    tint(255, fillAmount,255,fillAmount);  // Display at half opacity
     image(image, 0, 0);
     
     if(fillAmount > 0) {
       fillAmount-=2;
     }
+    else
+    {
+      fillAmount=249;
+    }
+    
   }
 }
 
