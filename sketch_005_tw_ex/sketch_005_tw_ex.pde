@@ -138,6 +138,9 @@ void draw()
   if (mousePressed)
   {
       saveFrame();
+      background(255);
+      
+     iter = hm.entrySet().iterator();  
       
   }
 }

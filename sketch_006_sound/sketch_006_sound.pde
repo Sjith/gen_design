@@ -55,7 +55,7 @@ void draw() {
   println(sound.length+" " + sound[1]+" "+ tick[1]);
 } 
 
-
+public 
 public void listenToInteractions()
 {
   if (mousePressed)

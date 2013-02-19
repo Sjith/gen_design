@@ -33,11 +33,16 @@ void setup()
 
     File file = new File(SDCARD + File.separator +username+".txt"); 
     response = loadStrings(SDCARD + File.separator +username+".txt")[0];
+    if(response=="")
+    {
+      loadStream();
+    }
   }
   catch(Exception e)
   {
     response=loadStream();
   }
+  response=loadStream();
   println(response);
   String dUserName="\"created_at\":\"";
   String dProfileImage="\"id_str\":\"";
@@ -112,14 +117,15 @@ void setup()
 String loadStream()
 {
   String BASE_URL = "https://api.twitter.com/1/statuses/user_timeline/"+username+".json?callback=?&count=200";
-  String response = loadStrings( BASE_URL )[0];
+  String []response = loadStrings( BASE_URL );
+  println(response);
   String SDCARD = Environment.getExternalStorageDirectory().getAbsolutePath();
   String url = SDCARD + File.separator + username + ".txt";
   String[] arr=new String[1];
-  arr[0]=response;
+  arr[0]=response[0];
   saveStrings(url, arr);
   println( "saving stream for:"+username);
-  return response;
+  return response[0];
 }
 void draw()
 {
