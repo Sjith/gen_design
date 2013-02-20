@@ -75,13 +75,7 @@ void onAccelerometerEvent(float x, float y, float z)
   accelerometerY = y;
   accelerometerZ = z;
 }
-void onOrientationEvent(float x, float y, float z) {
-  
 
-  gY=y;
- 
-
-}
 
 class SPoint {
   int x;
