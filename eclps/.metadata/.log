@@ -110,3 +110,103 @@ org.xml.sax.SAXException: The XML stream is not a valid default "site.xml" file.
 	at org.eclipse.equinox.internal.provisional.p2.ui.operations.ProvisioningUtil.getSizeInfo(ProvisioningUtil.java:253)
 	at org.eclipse.equinox.internal.p2.ui.dialogs.UpdateOrInstallWizardPage$2.run(UpdateOrInstallWizardPage.java:69)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 4 0 2013-02-21 10:27:05.480
+!MESSAGE Unable to load repository: http://www.aptana.com/downloads/start#
+!STACK 1
+org.eclipse.equinox.internal.provisional.p2.core.ProvisionException: Error reading update site http://www.aptana.com/downloads/start#.
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.load(UpdateSite.java:117)
+	at org.eclipse.equinox.internal.p2.updatesite.artifact.UpdateSiteArtifactRepository.<init>(UpdateSiteArtifactRepository.java:45)
+	at org.eclipse.equinox.internal.p2.updatesite.artifact.UpdateSiteArtifactRepositoryFactory.load(UpdateSiteArtifactRepositoryFactory.java:33)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:439)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:415)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:402)
+	at org.eclipse.equinox.internal.p2.engine.DownloadManager.fetch(DownloadManager.java:103)
+	at org.eclipse.equinox.internal.p2.engine.DownloadManager.start(DownloadManager.java:93)
+	at org.eclipse.equinox.internal.provisional.p2.engine.phases.Collect.completeInstallableUnitPhase(Collect.java:56)
+	at org.eclipse.equinox.internal.provisional.p2.engine.InstallableUnitPhase.completePhase(InstallableUnitPhase.java:79)
+	at org.eclipse.equinox.internal.provisional.p2.engine.Phase.postPerform(Phase.java:143)
+	at org.eclipse.equinox.internal.provisional.p2.engine.Phase.perform(Phase.java:85)
+	at org.eclipse.equinox.internal.provisional.p2.engine.InstallableUnitPhase.perform(InstallableUnitPhase.java:53)
+	at org.eclipse.equinox.internal.provisional.p2.engine.Phase.perform(Phase.java:46)
+	at org.eclipse.equinox.internal.provisional.p2.engine.PhaseSet.perform(PhaseSet.java:38)
+	at org.eclipse.equinox.internal.provisional.p2.engine.Engine.perform(Engine.java:53)
+	at org.eclipse.equinox.internal.provisional.p2.ui.operations.ProvisioningUtil.performProvisioningPlan(ProvisioningUtil.java:265)
+	at org.eclipse.equinox.internal.provisional.p2.ui.operations.ProfileModificationOperation.doExecute(ProfileModificationOperation.java:58)
+	at org.eclipse.equinox.internal.provisional.p2.ui.operations.ProvisioningOperation.execute(ProvisioningOperation.java:40)
+	at org.eclipse.equinox.internal.provisional.p2.ui.ProvisioningOperationRunner$1.run(ProvisioningOperationRunner.java:94)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.xml.sax.SAXException: The XML stream is not a valid default "site.xml" file. The root tag is not site.
+	at org.eclipse.equinox.internal.p2.metadata.generator.features.DefaultSiteParser.handleInitialState(DefaultSiteParser.java:473)
+	at org.eclipse.equinox.internal.p2.metadata.generator.features.DefaultSiteParser.startElement(DefaultSiteParser.java:806)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:501)
+	at com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:767)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:626)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3104)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:921)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.equinox.internal.p2.metadata.generator.features.DefaultSiteParser.parse(DefaultSiteParser.java:550)
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.load(UpdateSite.java:110)
+	... 20 more
+!SUBENTRY 1 org.eclipse.equinox.p2.updatesite 4 1002 2013-02-21 10:27:05.481
+!MESSAGE Error reading update site http://www.aptana.com/downloads/start#.
+!STACK 0
+org.xml.sax.SAXException: The XML stream is not a valid default "site.xml" file. The root tag is not site.
+	at org.eclipse.equinox.internal.p2.metadata.generator.features.DefaultSiteParser.handleInitialState(DefaultSiteParser.java:473)
+	at org.eclipse.equinox.internal.p2.metadata.generator.features.DefaultSiteParser.startElement(DefaultSiteParser.java:806)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.startElement(AbstractSAXParser.java:501)
+	at com.sun.org.apache.xerces.internal.impl.dtd.XMLDTDValidator.startElement(XMLDTDValidator.java:767)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:400)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:626)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3104)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:921)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:647)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:140)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:808)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:737)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:119)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1205)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:522)
+	at javax.xml.parsers.SAXParser.parse(SAXParser.java:395)
+	at org.eclipse.equinox.internal.p2.metadata.generator.features.DefaultSiteParser.parse(DefaultSiteParser.java:550)
+	at org.eclipse.equinox.internal.p2.updatesite.UpdateSite.load(UpdateSite.java:110)
+	at org.eclipse.equinox.internal.p2.updatesite.artifact.UpdateSiteArtifactRepository.<init>(UpdateSiteArtifactRepository.java:45)
+	at org.eclipse.equinox.internal.p2.updatesite.artifact.UpdateSiteArtifactRepositoryFactory.load(UpdateSiteArtifactRepositoryFactory.java:33)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:439)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:415)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:402)
+	at org.eclipse.equinox.internal.p2.engine.DownloadManager.fetch(DownloadManager.java:103)
+	at org.eclipse.equinox.internal.p2.engine.DownloadManager.start(DownloadManager.java:93)
+	at org.eclipse.equinox.internal.provisional.p2.engine.phases.Collect.completeInstallableUnitPhase(Collect.java:56)
+	at org.eclipse.equinox.internal.provisional.p2.engine.InstallableUnitPhase.completePhase(InstallableUnitPhase.java:79)
+	at org.eclipse.equinox.internal.provisional.p2.engine.Phase.postPerform(Phase.java:143)
+	at org.eclipse.equinox.internal.provisional.p2.engine.Phase.perform(Phase.java:85)
+	at org.eclipse.equinox.internal.provisional.p2.engine.InstallableUnitPhase.perform(InstallableUnitPhase.java:53)
+	at org.eclipse.equinox.internal.provisional.p2.engine.Phase.perform(Phase.java:46)
+	at org.eclipse.equinox.internal.provisional.p2.engine.PhaseSet.perform(PhaseSet.java:38)
+	at org.eclipse.equinox.internal.provisional.p2.engine.Engine.perform(Engine.java:53)
+	at org.eclipse.equinox.internal.provisional.p2.ui.operations.ProvisioningUtil.performProvisioningPlan(ProvisioningUtil.java:265)
+	at org.eclipse.equinox.internal.provisional.p2.ui.operations.ProfileModificationOperation.doExecute(ProfileModificationOperation.java:58)
+	at org.eclipse.equinox.internal.provisional.p2.ui.operations.ProvisioningOperation.execute(ProvisioningOperation.java:40)
+	at org.eclipse.equinox.internal.provisional.p2.ui.ProvisioningOperationRunner$1.run(ProvisioningOperationRunner.java:94)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2013-02-21 10:35:25.220 -----------------------------------------------
+eclipse.buildId=M20090211-1700
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=carbon, NL=en_US
+Framework arguments:  -keyring /Users/pier/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws carbon -arch x86 -keyring /Users/pier/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-02-21 10:47:42.359
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

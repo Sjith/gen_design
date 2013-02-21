@@ -7,7 +7,7 @@ private double sound;
 private final int tick1 = 8000; // samples of tick
 private boolean play = true;
 private boolean mouseClick;
-private int silence;
+
 private ArrayList<SSound> sArr;
 
 void setup()
@@ -19,7 +19,7 @@ void setup()
 }
 void draw() {
 
-  calcSilence();
+  //calcSilence();
 
   double[] tick =
     audioGenerator.getSineWave(this.tick1, 16000, 330);
@@ -55,7 +55,7 @@ void draw() {
   println(sound.length+" " + sound[1]+" "+ tick[1]);
 } 
 
-public 
+
 public void listenToInteractions()
 {
   if (mousePressed)
