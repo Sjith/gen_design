@@ -87,8 +87,8 @@ class SSound{
   
   public SSound(int x, int y){
     pos=new SPoint(x,y);
-    freq=map(x,0,displayWidth,330,880);
-    silence=map(y,0,displayHeight,0,16000);
+    freq=(int)map(x,0,displayWidth,330,880);
+    silence=(int)map(y,0,displayHeight,0,16000);
   
   }
   public void draw()

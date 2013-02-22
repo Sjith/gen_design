@@ -17,18 +17,26 @@ class SParticlesManager {
     for (int i=0;i<particles.size();i++)
     {
       particles.get(i).update();
+      particles.get(i).calculateIfInBounds();
       particles.get(i).paint();
+     for(int j=i+1;j<particles.size();j++)
+     {
+       
+       particles.get(i).isCollidingWith(particles.get(j));
+     } 
     }
   }
   public void flick()
   {
   }
+  
   public void updateAcceleration(PVector pA)
   {
     for (int i=0;i<particles.size();i++)
     {
-      particles.get(i).setAcceleration(pA);
+     particles.get(i).setAcceleration(pA);
     }
+   
   }
 }
 

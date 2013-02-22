@@ -12,6 +12,14 @@ void setup()
 void draw(){
      background(255);
     SPM.update();
+    
+    //debug
+    rect(0,0,displayWidth,10);
+    rect(0,displayHeight-10,displayWidth,10);
+    rect(0,0,10,displayHeight);
+    rect(displayWidth-10,0,10,displayHeight);
+    
+    
 }
 void onAccelerometerEvent(float x, float y, float z)
 {
@@ -31,5 +39,6 @@ void onLongPress()
 void onFlick( float x, float y, float px, float py, float v) {
   println(" flick started at " + x + " " + y);
   println(" and ended at " + px + " " + py + " with speed "+ v);
+  
   
 }
