@@ -1,0 +1,36 @@
+import processing.core.PApplet;
+
+public class MySketch
+        extends PApplet {
+
+    public void setup() {
+    	size(1280,900);
+    	background(255);
+    	 myDispatcher = new ExampleDispatcher();
+    	  myDispatcher.setListener(this);
+    	  
+    	  myDispatcher.dispatchBasic();
+    	  myDispatcher.dispatchWithArguments();
+    	  myDispatcher.dispatchAddOneToNumber();
+    }
+    public void handleBasicEvent() {
+    	  println("A basic event!");
+    	}
+    public void draw() {
+    	stroke(0);
+        if (mousePressed) {
+          line(mouseX,mouseY,pmouseX,pmouseY);
+          
+          
+        }
+    }
+ // arguments will get passed from myDispatcher.
+    void handleEventWithArgs(int arg1,float arg2) {
+      println("arg1 is :: " + arg1 + " and arg2 is" + arg2);
+    }
+
+    
+    public static void main(String[] args) {
+        PApplet.main(new String[] {MySketch.class.getName()});
+    }
+}

@@ -1,0 +1,48 @@
+import java.lang.reflect.Method;
+
+class ExampleDispatcher {
+  private Object _listener;
+  
+  public void setListener(Object obj) {
+    _listener = obj;
+  }
+  
+  public void dispatchBasic() {
+    try {
+      Method callback = _listener.getClass().getMethod("handleBasicEvent");
+      callback.invoke(_listener); // calls the method with itself as the scope. _listener should always be the first argument.
+    }
+    catch(Exception e) {
+      // the listener probably doesn't have void basicEventHandler();
+    }
+  }
+  
+  public void dispatchWithArguments() {
+    try {
+      // in order to find the correct method we have to specify that we're looking for a method named "handleEventWithArgs"
+      // that accepts two arguments: one of type int, one of type float. here's how we do that.
+      Method callback = _listener.getClass().getMethod("handleEventWithArgs",int.class,float.class);
+      
+      // we know our listener must be the first argument from our basic example.
+      callback.invoke(_listener,1,3.14); 
+      System.out.println("DISPATCH_WITH_ARGS done");
+    }
+    catch(Exception e) {
+    	System.out.println("DISPATCH_WITH_ARGS:"+e);
+    }    
+  }
+  
+  public void dispatchAddOneToNumber() {
+    try {
+      Method callback = _listener.getClass().getMethod("addOne",int.class);
+      Object invokedResult = callback.invoke(_listener,1); // always returns type Object. We can cast from there.
+      //int total = (int) invokedResult;
+
+      //println("The total is :: " + total);
+      System.out.println("invoked result:"+invokedResult);
+    }
+    catch(Exception e) {
+      
+    }
+  }
+};

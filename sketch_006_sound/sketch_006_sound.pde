@@ -1,4 +1,4 @@
-AudioGenerator audioGenerator = new AudioGenerator(8000);
+AudioGenerator audioGenerator = new AudioGenerator(48100);
 
 private int beat;
 private int silence;
@@ -22,11 +22,11 @@ void draw() {
   //calcSilence();
 
   double[] tick =
-    audioGenerator.getSineWave(this.tick1, 16000, 330);
+    audioGenerator.getSineWave(this.tick1, 48000, 20000);
   double[] tock =
-    audioGenerator.getSineWave(this.tick1, 16000, 440);
+    audioGenerator.getSineWave(this.tick1, 48000, 440);
   double silence = 0;
-  double[] sound = new double[16000];
+  double[] sound = new double[48000];
   int t = 0, s = 0, b = 0;
 
   for (int i=0;i<sound.length&&play;i++) {
