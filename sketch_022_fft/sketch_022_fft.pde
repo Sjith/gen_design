@@ -42,7 +42,7 @@ void draw() {
    for (int i = 0; i < bufferReadResult; i++) 
    {
       //volume = Math.max(Math.abs(buffer[i]), volume);
-     line( i, 200 + buffer[i]/100, i + 1, 200 + buffer[i+1]/100 ); 
+     line( i, 200 +(short) bufferFFT[i]/100, i + 1, 200 + (short)bufferFFT[i+1]/100 ); 
    }
     bufferFFT=new double[bufferSize];
   buffer = new short[bufferSize];

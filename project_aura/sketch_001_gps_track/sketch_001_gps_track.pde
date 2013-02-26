@@ -6,6 +6,7 @@ import ketai.ui.*;
 import android.view.MotionEvent;
 KetaiGesture gesture;
 
+
 /*
  size(1280,800);
  bounds(12.487,55.6623,12.6322,55.7135);
